@@ -1,10 +1,12 @@
-
+import { SWRConfig } from "swr";
+import apiConfig from "./api/api-config";
+import MainLayout from "./components/main-layout";
 
 function App() {
     return (
-        <div>
-            123
-        </div>
+        <SWRConfig  value={{fetcher: apiConfig}}>
+            <MainLayout/>
+        </SWRConfig>
     )
 }
 
