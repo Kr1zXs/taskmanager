@@ -1,15 +1,22 @@
 import MainFilterItem from "./MainFilterItem";
-import { filters } from "../../utils";
-function MainFilter( {setFilterType} ) {
+import { filterCallbacks, filters } from "../../utils";
+function MainFilter( {data, filterTipe, setFilterType} ) {
   
   return (
     <section class="main__filter filter container">
       {filters.map((filter) => {
+        const count = data.filter(filterCallbacks[filter.filterType],).length
+
+        const disabled = count <= 0
+        const checked = filterTipe === filter.filterType
         return (
         <MainFilterItem
-         key={filter.id}
+        key={filter.id}
         {...filter}
-        onChange={setFilterType}
+         count={count}
+         checked={checked}
+         disabled={disabled}
+         onChange={setFilterType}
         />
         )
       })}

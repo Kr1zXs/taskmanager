@@ -12,7 +12,7 @@ const filterCallbacks = {
     archive: ({is_archived}) => is_archived === true,
   };
   const filters = [
-    {id: crypto.randomUUID(), filterType: 'all', disabled: false, checked: true, count: 13},
+    {id: crypto.randomUUID(), filterType: 'all', disabled: false, checked: false, count: 13},
     {id: crypto.randomUUID(), filterType: 'overdue', disabled: false, checked: false, count: 0},
     {id: crypto.randomUUID(), filterType: 'today', disabled: false, checked: false, count: 0},
     {id: crypto.randomUUID(), filterType: 'favorites', disabled: false, checked: false, count: 1},
